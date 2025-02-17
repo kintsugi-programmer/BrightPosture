@@ -1,4 +1,4 @@
-SoftwareSerial#include <SoftwareSerial.h>
+#include <SoftwareSerial.h>
 
 #define TRIG 9
 #define ECHO 10

@@ -12,14 +12,16 @@ def set_brightness_xrandr(brightness):
     except Exception as e:
         return str(e)
 
-@app.route('/update_data', methods=['POST'])
+@app.route('/', methods=['POST'])
 def update_data():
     try:
         data = request.get_json()
-        distance = data.get("distance", 0)
-        light = data.get("light", 500)
+        print(data)
+        distance = int(data.get("distance", 0))  # Convert to integer
+        light = int(data.get("light", 0))      # Convert to integer
+
         # linear
-        brightness = min(max(5, light), 100)
+        brightness = min(max(5, light), 140)
 
 
 
